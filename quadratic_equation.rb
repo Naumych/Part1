@@ -3,7 +3,6 @@
 def quadratic_equation_calculation
   variables = input_variables
   discriminant = calculate_discriminant(variables)
-  puts discriminant.inspect
   put_answer discriminant, variables
 end
 
