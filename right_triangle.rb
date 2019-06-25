@@ -6,9 +6,9 @@ def right_triangle_check
   triangle_sides = triangle_sides.map { |item| item**2 }
   puts triangle_sides
 
-  puts "It's not a triangle" if triangle(triangle_sides)
-  puts 'RIGHT' if right_triangle?(triangle_sides)
-  puts 'isosceles_triangle?' if isosceles_triangle?(triangle_sides)
+  puts "It's not a triangle" if triangle?(triangle_sides)
+  puts 'right triangle' if right_triangle?(triangle_sides)
+  puts 'isosceles triangle' if isosceles_triangle?(triangle_sides)
 end
 
 def triangle?(triangle_sides)
