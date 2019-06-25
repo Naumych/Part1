@@ -4,9 +4,9 @@ def right_triangle_check
   triangle_sides = input_triangle_sides
   triangle_sides.sort!
   triangle_sides = triangle_sides.map { |item| item**2 }
-  puts triangle_sides
 
-  puts "It's not a triangle" if triangle?(triangle_sides)
+  return puts "It's not a triangle" if triangle?(triangle_sides)
+
   puts 'right triangle' if right_triangle?(triangle_sides)
   puts 'isosceles triangle' if isosceles_triangle?(triangle_sides)
 end
@@ -25,11 +25,10 @@ end
 
 def input_triangle_sides
   puts 'Input 1-st, 2-nd and 3-rd triangle side'
-  a = gets.chomp
-  b = gets.chomp
-  c = gets.chomp
-  triangle_sides = []
-  triangle_sides.push(a.to_f, b.to_f, c.to_f)
+  a = gets.chomp.to_f
+  b = gets.chomp.to_f
+  c = gets.chomp.to_f
+  [a, b, c]
 end
 
 right_triangle_check

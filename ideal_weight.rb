@@ -8,7 +8,7 @@ def calculate_ideal_weight
   if (height - 110) <= 0
     puts 'Your weight are perfect'
   else
-    puts "Hey, #{name}! Your ideal weight id #{height - 110}"
+    puts "Hey, #{name}! Your ideal weight is #{height - 110}"
   end
 end
 

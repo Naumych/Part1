@@ -8,4 +8,4 @@ def calculate_square
   puts 0.5 * a * h
 end
 
-square
+calculate_square
