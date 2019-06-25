@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 def quadratic_equation_calculation
-  variables = input_variables
+  variables = fetch_variables
   discriminant = calculate_discriminant(variables)
   put_answer discriminant, variables
 end
@@ -35,7 +35,7 @@ def calculate_discriminant(variables)
   variables[1]**2 - 4 * variables[0] * variables[2]
 end
 
-def input_variables
+def fetch_variables
   puts 'Input a, b, c'
   a = gets.chomp.to_f
   b = gets.chomp.to_f
