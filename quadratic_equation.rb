@@ -1,41 +1,41 @@
 # frozen_string_literal: true
 
-def quadratic_equation
-  variables = input
-  discriminant(variables)
-  checks discriminant
+def quadratic_equation_calculation
+  variables = input_variables
+  discriminant = calculate_discriminant(variables)
+  put_answer discriminant
 end
 
-def checks(discriminant)
-  negative_discriminant discriminant
-  positive_discriminant discriminant
-  zero_discriminant discriminant
+def put_answer(discriminant)
+  negative_discriminant? discriminant
+  positive_discriminant? discriminant
+  zero_discriminant? discriminant
 end
 
-def negative_discriminant(discriminant)
+def negative_discriminant?(discriminant)
   message = "It's discriminant - #{discriminant}.
   There are no roots"
   puts message if discriminant.negative?
 end
 
-def positive_discriminant(discriminant)
+def positive_discriminant?(discriminant)
   message =  "It's discriminant - #{discriminant}.
-  It's first root - #{first_root discriminant variables},
-  it's second root #{second_root discriminant variables}."
+  It's first root - #{calculate_first_root discriminant variables},
+  it's second root #{calculate_second_root discriminant variables}."
   puts message if discriminant.positive?
 end
 
-def zero_discriminant(discriminant)
+def zero_discriminant?(discriminant)
   message = "It's discriminant - #{discriminant}.
-  It's first root - #{one_root variables}"
+  It's first root - #{calculate_one_root variables}"
   puts message if discriminant.zero?
 end
 
-def discriminant(variables)
+def calculate_discriminant(variables)
   variables[1]**2 - 4 * variables[0] * variables[2]
 end
 
-def input
+def input_variables
   puts 'Input a, b, c'
   a = gets.chomp.to_f
   b = gets.chomp.to_f
@@ -44,16 +44,16 @@ def input
   variables.push(a.to_f, b.to_f, c.to_f)
 end
 
-def first_root(discriminant, variables)
+def calculate_first_root(discriminant, variables)
   (Math.sqrt(discriminant) - variables[1]) / 2.0 * variables[0]
 end
 
-def second_root(discriminant, variables)
+def calculate_second_root(discriminant, variables)
   (-Math.sqrt(discriminant) - variables[1]) / 2.0 * variables[0]
 end
 
-def one_root(variables)
+def calculate_one_root(variables)
   - variables[1] / 2.0 * variables[0]
 end
 
-quadratic_equation
+quadratic_equation_calculation

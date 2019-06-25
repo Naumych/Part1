@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-def ideal_weight
-  puts "What's your name"
+def calculate_ideal_weight
+  puts "What's your name?"
   name = gets.chomp
-  puts 'How tall are you'
+  puts 'How tall are you?'
   height = gets.chomp.to_i
   if (height - 110) <= 0
     puts 'Your weight are perfect'
@@ -12,4 +12,4 @@ def ideal_weight
   end
 end
 
-ideal_weight
+calculate_ideal_weight
